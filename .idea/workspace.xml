@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="working on recipe menu">
+    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="added constructor to receipe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeBook.py" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeBook.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747517177704</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added constructor to receipe">
+      <option name="closed" value="true" />
+      <created>1747518119392</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747518119392</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +166,7 @@
     <MESSAGE value="made ShoppingList singleton" />
     <MESSAGE value="working on homepage" />
     <MESSAGE value="working on recipe menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="working on recipe menu" />
+    <MESSAGE value="added constructor to receipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="added constructor to receipe" />
   </component>
 </project>
