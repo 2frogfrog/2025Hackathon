@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ShoppingListGui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/2025Hackathon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2025Hackathon.iml" afterDir="false" />
+    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="priority ingredients and recipes">
+      <change afterPath="$PROJECT_DIR$/Recipe_menu.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -25,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Abi" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -46,16 +45,15 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2xEV0gnDSz4YVYlKMaSCK7gBlBC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Python.ShoppingListGui.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Abby&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+    &quot;git-widget-placeholder&quot;: &quot;Abi&quot;
   }
 }</component>
   <component name="SharedIndexes">
@@ -82,7 +80,31 @@
       <option name="project" value="LOCAL" />
       <updated>1747506288961</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Merged Abi Code">
+      <option name="closed" value="true" />
+      <created>1747507720782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747507720782</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added recipes and started shopping list">
+      <option name="closed" value="true" />
+      <created>1747510900677</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747510900678</updated>
+    </task>
+    <task id="LOCAL-00004" summary="priority ingredients and recipes">
+      <option name="closed" value="true" />
+      <created>1747513477663</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747513477663</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -98,9 +120,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made Ingredient" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made Ingredient" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/2025Hackathon$ShoppingListGui.coverage" NAME="ShoppingListGui Coverage Results" MODIFIED="1747515762522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <MESSAGE value="Merged Abi Code" />
+    <MESSAGE value="Added recipes and started shopping list" />
+    <MESSAGE value="priority ingredients and recipes" />
+    <option name="LAST_COMMIT_MESSAGE" value="priority ingredients and recipes" />
   </component>
 </project>
