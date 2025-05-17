@@ -6,6 +6,9 @@ def run():
 class Fridge:
     ingredient_list = []
     def addIngredient(self, name, doesExpire, shelfLife, quantity, quantityUnit):
-        newIngredient = Ingredient(name,shelfLife,doesExpire,quantity,quantityUnit)
-        self.ingredient_list.append(newIngredient)
-
+        new_ingredient = Ingredient(name,shelfLife,doesExpire,quantity,quantityUnit)
+        self.ingredient_list.append(new_ingredient)
+        self.ingredient_list = sorted(self.ingredient_list)
+    def update(self):
+        for item in self.ingredient_list:
+            item.update()
