@@ -16,7 +16,7 @@ class Recipe:
         else:
             return False, self.missing
     def add_list(self):
-        ShoppingList.add_List(self.missing)
+        ShoppingList.add_list(self.missing)
     def get_priority(self):
         priority = 0
         for item in self.ingredientList:
