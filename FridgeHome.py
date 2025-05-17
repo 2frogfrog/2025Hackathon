@@ -2,7 +2,7 @@ import pygame
 import sys
 
 import recipe_menu
-from Ingredient import Ingredient
+import shoppinglist_menu
 
 pygame.init()
 
@@ -101,7 +101,7 @@ def run(recipeBook):
                 if recipes_button.collidepoint(event.pos):
                     recipe_menu.run(screen,recipeBook)
                 elif shopping_button.collidepoint(event.pos):
-                    print("shopping")
+                    shoppinglist_menu.run(screen)
 
         pygame.display.flip()
         clock.tick(60)
