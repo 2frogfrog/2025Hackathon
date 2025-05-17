@@ -9,7 +9,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Fridge Inventory App")
 
 # Colors
-WHITE = (255, 255, 255)
+WHITE = (255, 255, 256)
 BLACK = (0, 0, 0)
 GRAY = (200, 200, 200)
 LIGHT_GRAY = (240, 240, 240)
