@@ -1,28 +1,46 @@
 # recipe_menu.py
 
 import pygame
+from Recipe import Recipe  # Make sure this path is correct
 
-def run(screen):
-    # Get screen size
+def run(screen, recipe_book):
     width, height = screen.get_size()
-
-    # Set font (scale based on height)
-    font_size = max(int(height * 0.05), 24)
+    font_size = max(int(height * 0.03), 20)
     font = pygame.font.SysFont(None, font_size)
 
-    # Render "Recipe" text
-    text = font.render("Recipe", True, (0, 0, 0))  # Black text
-    text_rect = text.get_rect(center=(width // 2, height // 2))
+    # Define the + (add) button
+    plus_button = pygame.Rect(width - 70, 20, 50, 50)
 
-    # Main loop for recipe menu
     running = True
     while running:
         screen.fill((255, 255, 255))  # White background
-        screen.blit(text, text_rect)
 
+        # Draw title
+        title = font.render("Recipes", True, (0, 0, 0))
+        screen.blit(title, (30, 20))
+
+        # Draw + button
+        pygame.draw.rect(screen, (200, 200, 200), plus_button, border_radius=10)
+        plus = font.render("+", True, (0, 0, 0))
+        screen.blit(plus, plus.get_rect(center=plus_button.center))
+
+        # Draw each recipe name
+        for i, recipe in enumerate(recipe_book.recipeList):
+            y = 100 + i * 50
+            name_text = getattr(recipe, "name", f"Recipe {i+1}")
+            label = font.render(name_text, True, (0, 0, 0))
+            screen.blit(label, (40, y))
+
+        # Event loop
         for event in pygame.event.get():
             if event.type == pygame.QUIT or (
                 event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                 running = False
+
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if plus_button.collidepoint(event.pos):
+                    # Create and add a dummy recipe with a name
+                    new_recipe = Recipe(f"Recipe {len(recipe_book.recipeList) + 1}")
+                    recipe_book.add_recipe(new_recipe)
 
         pygame.display.flip()
