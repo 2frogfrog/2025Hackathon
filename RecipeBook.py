@@ -1,5 +1,6 @@
 class RecipeBook:
-    recipeList = []
+    def __init__(self):
+        self.recipeList = []
     def add_recipe(self, recipe):
         self.recipeList.append(recipe)
     def available_recipes(self):
