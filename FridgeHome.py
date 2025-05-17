@@ -2,6 +2,7 @@ import pygame
 import sys
 
 import recipe_menu
+from Ingredient import Ingredient
 
 pygame.init()
 
@@ -35,9 +36,8 @@ def draw_button(text, rect, color=GRAY):
         screen.blit(label, label_rect)
 
 # Main loop
-def main():
+def run(recipeBook):
     clock = pygame.time.Clock()
-
     while True:
         screen.fill(WHITE)
 
@@ -99,12 +99,12 @@ def main():
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if recipes_button.collidepoint(event.pos):
-                    recipe_menu.run(screen,)
+                    recipe_menu.run(screen,recipeBook)
                 elif shopping_button.collidepoint(event.pos):
                     print("shopping")
 
         pygame.display.flip()
         clock.tick(60)
 
-if __name__ == "__main__":
-    main()
+
+

@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="added constructor to receipe book">
-      <change beforePath="$PROJECT_DIR$/recipe_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Fridge.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FridgeHome.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridgeHome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingList.py" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StartApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/StartApp.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Abby" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,6 +55,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.FridgeHome.executor": "Run",
+    "Python.StartApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Eva"
   }
