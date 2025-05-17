@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-import recipe_menu
+import Recipe_menu
 import shoppinglist_menu
 
 pygame.init()
@@ -99,7 +99,7 @@ def run(recipeBook):
                 sys.exit()
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if recipes_button.collidepoint(event.pos):
-                    recipe_menu.run(screen,recipeBook)
+                    Recipe_menu.run(screen,recipeBook)
                 elif shopping_button.collidepoint(event.pos):
                     shoppinglist_menu.run(screen)
 

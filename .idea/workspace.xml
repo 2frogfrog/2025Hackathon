@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="can add recipe" />
+    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="can add recipe">
+      <change beforePath="$PROJECT_DIR$/FridgeHome.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridgeHome.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Recipe_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/Recipe_menu.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,7 +55,7 @@
     "Python.StartApp.executor": "Run",
     "Python.add_Recipe.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Eva"
+    "git-widget-placeholder": "master"
   }
 }]]></component>
   <component name="SharedIndexes">
