@@ -1,9 +1,21 @@
 # shopping_list.py
 
 class ShoppingList:
-    def __init__(self):
-        self.items = []
+    __instance = None
 
+    @staticmethod
+    def get_instance():
+        return ShoppingList.__instance
+
+    @staticmethod
+    def delete_instance():
+        ShoppingList.__instance = None
+
+    def __init__(self):
+        if ShoppingList.__instance is not None:
+            raise Exception("ShoppingList already exists!")
+        else:
+            self.items = []
     def add_ingredient(self, ingredient):
         """Add an ingredient object to the shopping list if its name is not already present."""
         if not any(item.name == ingredient.name for item in self.items):
