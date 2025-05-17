@@ -31,7 +31,7 @@ class TextInput:
         pygame.draw.rect(screen, self.color, self.rect)
         pygame.draw.rect(screen, self.border_color, self.rect, 2)
         txt_surface = self.font.render(f"{self.prompt}{self.text}", True, (0, 0, 0))
-        screen.blit(txt_surface, (self.rect.x+5, self.rect.y+5))
+        screen.blit(txt_surface, (self.rect.x + 5, self.rect.y + 5))
 
     def get_value(self):
         return self.text
@@ -39,17 +39,17 @@ class TextInput:
 
 def run(screen, recipe_book):
     clock = pygame.time.Clock()
-    font = pygame.font.SysFont(None, 32)
+    font = pygame.font.SysFont(None, 36)
 
-    # Input fields with larger sizes
-    name_input = TextInput((100, 100, 800, 60), font, "Name: ")  # Larger width and height
-    ingredients_input = TextInput((100, 180, 800, 60), font, "Ingredients (name:shelfLife:doesExpire:qty:unit): ")  # Larger width and height
-    steps_input = TextInput((100, 260, 800, 100), font, "Steps: ")  # Larger width and height
+    # Input fields (larger)
+    name_input = TextInput((100, 100, 800, 60), font, "Name: ")
+    ingredients_input = TextInput((100, 180, 800, 60), font, "Ingredients (name:shelfLife:doesExpire:qty:unit): ")
+    steps_input = TextInput((100, 260, 800, 100), font, "Steps: ")
 
     inputs = [name_input, ingredients_input, steps_input]
 
     # Submit button
-    submit_button = pygame.Rect(100, 400, 200, 60)  # Larger button
+    submit_button = pygame.Rect(100, 400, 200, 60)
 
     running = True
     while running:
@@ -75,12 +75,12 @@ def run(screen, recipe_book):
                         ingredient = Ingredient(n.strip(), int(sl), de.strip() == "True", float(q), qu.strip())
                         ingredient_objs.append(ingredient)
                     except ValueError:
-                        print(f"Error parsing ingredient: {raw}")
+                        print(f"⚠️ Error parsing ingredient: {raw}")
 
                 if name and ingredient_objs:
                     new_recipe = Recipe(name)
                     new_recipe.add_ingredient(ingredient_objs)
-                    recipe_book.add_recipe(new_recipe)
+                    recipe_book.add_recipe(new_recipe)  # <-- Corrected call
                     print(f"✅ Added recipe: {name}")
                     running = False
                 else:
@@ -92,7 +92,7 @@ def run(screen, recipe_book):
 
         # Draw submit button
         pygame.draw.rect(screen, (180, 180, 180), submit_button)
-        submit_text = font.render("Submit", True, (0, 0, 0))
+        submit_text = font.render("Add Recipe", True, (0, 0, 0))
         screen.blit(submit_text, submit_text.get_rect(center=submit_button.center))
 
         pygame.display.flip()
