@@ -11,10 +11,11 @@ class Ingredient:
         self.quantityUnit = quantityUnit
         self.expiring = False
         self.dateAdded = date.today()
-        try:
-            self.image = "../Assets/" + self.name + ".png"
-        except FileNotFoundError:
-            self.image = "../Assets/unknown.png"
+        image_path = "Assets/" + self.name + ".png"
+        if os.path.exists(image_path):
+            self.image = image_path
+        else:
+            self.image = "Assets/generic.png"
     def have_ingredient(self, fridge):
         for item in fridge.ingredient_list:
             if self.name == item.name and self.quantity <= item.quantity:
