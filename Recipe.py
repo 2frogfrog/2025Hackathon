@@ -2,8 +2,10 @@ from ShoppingList import ShoppingList
 
 
 class Recipe:
-    ingredientList = []
-    missing = []
+    def __init__(self, name):
+        self.name = name
+        self.ingredientList = []
+        self.missing = []
     def add_ingredient(self, ingredients):
         for item in ingredients:
             self.ingredientList.append(item)
