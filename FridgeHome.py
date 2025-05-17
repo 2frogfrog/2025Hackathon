@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+import recipe_menu
+
 pygame.init()
 
 # Initialize fullscreen before getting resolution
