@@ -17,3 +17,13 @@ class Recipe:
             return False, self.missing
     def add_list(self):
         ShoppingList.add_List(self.missing)
+    def get_priority(self):
+        priority = 0
+        for item in self.ingredientList:
+            if item.expiring:
+                priority += 1
+        return priority
+
+    def __lt__(self, other):
+        return self.get_priority() < other.get_priority()
+
