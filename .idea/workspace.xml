@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="added constructor to receipe book">
-      <change afterPath="$PROJECT_DIR$/Fridge.py" afterDir="false" />
+    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="basic recipe_menu">
+      <change afterPath="$PROJECT_DIR$/add_Recipe.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FridgeHome.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridgeHome.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ShoppingList.py" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StartApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/StartApp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipe_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipe_menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +54,7 @@
   "keyToString": {
     "Python.FridgeHome.executor": "Run",
     "Python.StartApp.executor": "Run",
+    "Python.add_Recipe.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Eva"
   }
@@ -156,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747518164832</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="basic recipe_menu">
+      <option name="closed" value="true" />
+      <created>1747519561413</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747519561413</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,6 +187,7 @@
     <MESSAGE value="working on recipe menu" />
     <MESSAGE value="added constructor to receipe" />
     <MESSAGE value="added constructor to receipe book" />
-    <option name="LAST_COMMIT_MESSAGE" value="added constructor to receipe book" />
+    <MESSAGE value="basic recipe_menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic recipe_menu" />
   </component>
 </project>

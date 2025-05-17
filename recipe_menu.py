@@ -1,6 +1,8 @@
 # recipe_menu.py
 
 import pygame
+
+import add_Recipe
 from Recipe import Recipe  # Make sure this path is correct
 
 def run(screen, recipe_book):
@@ -40,7 +42,6 @@ def run(screen, recipe_book):
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if plus_button.collidepoint(event.pos):
                     # Create and add a dummy recipe with a name
-                    new_recipe = Recipe(f"Recipe {len(recipe_book.recipeList) + 1}")
-                    recipe_book.add_recipe(new_recipe)
+                    add_Recipe.run(screen, recipe_book)
 
         pygame.display.flip()
