@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="priority ingredients and recipes">
-      <change afterPath="$PROJECT_DIR$/Recipe_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="can add recipe" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="Abby" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -50,12 +46,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Abi&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.FridgeHome.executor": "Run",
+    "Python.StartApp.executor": "Run",
+    "Python.add_Recipe.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Eva"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -104,7 +103,79 @@
       <option name="project" value="LOCAL" />
       <updated>1747513477663</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="made ShoppingList singleton">
+      <option name="closed" value="true" />
+      <created>1747515060423</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747515060423</updated>
+    </task>
+    <task id="LOCAL-00006" summary="working on homepage">
+      <option name="closed" value="true" />
+      <created>1747516755206</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747516755206</updated>
+    </task>
+    <task id="LOCAL-00007" summary="working on recipe menu">
+      <option name="closed" value="true" />
+      <created>1747517157954</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747517157954</updated>
+    </task>
+    <task id="LOCAL-00008" summary="working on recipe menu">
+      <option name="closed" value="true" />
+      <created>1747517177704</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747517177704</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added constructor to receipe">
+      <option name="closed" value="true" />
+      <created>1747518119392</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747518119392</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added constructor to receipe book">
+      <option name="closed" value="true" />
+      <created>1747518164832</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747518164832</updated>
+    </task>
+    <task id="LOCAL-00011" summary="basic recipe_menu">
+      <option name="closed" value="true" />
+      <created>1747519561413</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747519561413</updated>
+    </task>
+    <task id="LOCAL-00012" summary="working on add_recipe">
+      <option name="closed" value="true" />
+      <created>1747521046698</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747521046698</updated>
+    </task>
+    <task id="LOCAL-00013" summary="can add recipe">
+      <option name="closed" value="true" />
+      <created>1747521677548</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1747521677548</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +194,14 @@
     <MESSAGE value="Merged Abi Code" />
     <MESSAGE value="Added recipes and started shopping list" />
     <MESSAGE value="priority ingredients and recipes" />
-    <option name="LAST_COMMIT_MESSAGE" value="priority ingredients and recipes" />
+    <MESSAGE value="made ShoppingList singleton" />
+    <MESSAGE value="working on homepage" />
+    <MESSAGE value="working on recipe menu" />
+    <MESSAGE value="added constructor to receipe" />
+    <MESSAGE value="added constructor to receipe book" />
+    <MESSAGE value="basic recipe_menu" />
+    <MESSAGE value="working on add_recipe" />
+    <MESSAGE value="can add recipe" />
+    <option name="LAST_COMMIT_MESSAGE" value="can add recipe" />
   </component>
 </project>
