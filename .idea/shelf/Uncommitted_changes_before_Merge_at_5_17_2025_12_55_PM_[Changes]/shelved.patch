@@ -1,0 +1,251 @@
+Index: StartApp.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\nimport sqlite3\r\nimport FridgeHome\r\n\r\nclass StartGame:\r\n    pygame.init()\r\n    SCREEN_WIDTH = 810\r\n    SCREEN_HEIGHT = 810\r\n    con = sqlite3.connect('food.db')\r\n    cur = con.cursor()\r\n    cur.execute(\"CREATE TABLE IF NOT EXISTS ingredients(name UNIQUE, expiration, calories)\")\r\n    con.commit()\r\n\r\n    cur.execute(\"CREATE TABLE IF NOT EXISTS recipes(name UNIQUE, ingredients)\")\r\n    con.commit()\r\n    con.close()\r\n\r\n\r\n    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))\r\n    FridgeHome.run(screen)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/StartApp.py b/StartApp.py
+--- a/StartApp.py	(revision 22df3c60e74206f42b571e731a5efafd4748296f)
++++ b/StartApp.py	(date 1747511740175)
+@@ -3,18 +3,5 @@
+ import FridgeHome
+ 
+ class StartGame:
+-    pygame.init()
+-    SCREEN_WIDTH = 810
+-    SCREEN_HEIGHT = 810
+-    con = sqlite3.connect('food.db')
+-    cur = con.cursor()
+-    cur.execute("CREATE TABLE IF NOT EXISTS ingredients(name UNIQUE, expiration, calories)")
+-    con.commit()
+-
+-    cur.execute("CREATE TABLE IF NOT EXISTS recipes(name UNIQUE, ingredients)")
+-    con.commit()
+-    con.close()
+-
+-
+-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
++    screen = pygame.display.set_mode((800, 500))
+     FridgeHome.run(screen)
+\ No newline at end of file
+Index: FridgeHome.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Ingredient\r\n\r\ndef run():\r\n    return 0\r\n\r\nclass Fridge:\r\n    def __init__(self):\r\n        self.ingredient_list = []\r\n\r\n    def addIngredient(self, name, doesExpire, shelfLife, quantity, quantityUnit):\r\n        newIngredient = Ingredient(name,shelfLife,doesExpire,quantity,quantityUnit)\r\n        self.ingredient_list.append(newIngredient)\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/FridgeHome.py b/FridgeHome.py
+--- a/FridgeHome.py	(revision 22df3c60e74206f42b571e731a5efafd4748296f)
++++ b/FridgeHome.py	(date 1747511740175)
+@@ -1,7 +1,86 @@
+ import Ingredient
+ 
+-def run():
+-    return 0
++import pygame
++import sys
++
++pygame.init()
++
++# Window setup
++WIDTH, HEIGHT = 800, 500
++screen = pygame.display.set_mode((WIDTH, HEIGHT))
++pygame.display.set_caption("Fridge Inventory App")
++
++# Colors
++WHITE = (255, 255, 255)
++BLACK = (0, 0, 0)
++GRAY = (200, 200, 200)
++LIGHT_GRAY = (240, 240, 240)
++RED = (255, 0, 0)
++GREEN = (0, 200, 0)
++BLUE = (0, 100, 255)
++
++# Fonts
++font = pygame.font.SysFont(None, 24)
++
++
++# Button drawing function
++def draw_button(text, rect, color=GRAY):
++    pygame.draw.rect(screen, color, rect, border_radius=10)
++    label = font.render(text, True, BLACK)
++    label_rect = label.get_rect(center=rect.center)
++    screen.blit(label, label_rect)
++
++
++# Main loop
++def run(screen):
++    clock = pygame.time.Clock()
++
++    while True:
++        screen.fill(WHITE)
++
++        # Left panel
++        pygame.draw.rect(screen, LIGHT_GRAY, (0, 0, 200, HEIGHT))
++        draw_button("Recipes", pygame.Rect(30, 100, 140, 40))
++        draw_button("Shopping\nLists", pygame.Rect(30, 160, 140, 40))
++        pygame.draw.circle(screen, GRAY, (100, 250), 30)
++        pygame.draw.polygon(screen, BLACK, [(90, 240), (110, 250), (90, 260)])
++
++        # Center ingredient area
++        pygame.draw.circle(screen, RED, (300, 150), 20)
++        screen.blit(font.render("5", True, BLACK), (320, 140))
++
++        pygame.draw.circle(screen, GREEN, (400, 150), 20)
++        screen.blit(font.render("2", True, BLACK), (420, 140))
++
++        pygame.draw.circle(screen, BLUE, (350, 250), 20)
++        screen.blit(font.render("1", True, BLACK), (370, 240))
++
++        pygame.draw.circle(screen, BLACK, (350, 350), 25, 2)
++        pygame.draw.line(screen, BLACK, (340, 350), (360, 350), 2)
++        pygame.draw.line(screen, BLACK, (350, 340), (350, 360), 2)
++
++        # Right panel - item details
++        pygame.draw.rect(screen, LIGHT_GRAY, (550, 50, 230, 400))
++        screen.blit(font.render("Broccoli:", True, BLACK), (560, 60))
++        screen.blit(font.render("Quantity: 1", True, BLACK), (560, 90))
++        screen.blit(font.render("Exp. Date: March 23rd, 2025", True, BLACK), (560, 120))
++        screen.blit(font.render("3 days left", True, RED), (560, 140))
++        screen.blit(font.render("Calories per serving: 70", True, BLACK), (560, 170))
++        screen.blit(font.render("Days till exp: 8 days", True, BLACK), (560, 200))
++
++        draw_button("-", pygame.Rect(560, 250, 40, 40))
++        draw_button("+", pygame.Rect(620, 250, 40, 40))
++
++        # Event handler
++        for event in pygame.event.get():
++            if event.type == pygame.QUIT:
++                pygame.quit()
++                sys.exit()
++
++        pygame.display.flip()
++        clock.tick(60)
++
++
+ 
+ class Fridge:
+     def __init__(self):
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.12 (2025Hackathon)\" />\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" project-jdk-name=\"Python 3.12 (2025Hackathon)\" project-jdk-type=\"Python SDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 22df3c60e74206f42b571e731a5efafd4748296f)
++++ b/.idea/misc.xml	(date 1747511740158)
+@@ -3,5 +3,5 @@
+   <component name="Black">
+     <option name="sdkName" value="Python 3.12 (2025Hackathon)" />
+   </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (2025Hackathon)" project-jdk-type="Python SDK" />
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9e4c6175-8279-4ff4-b4aa-c29abefc78ff\" name=\"Changes\" comment=\"Merged Abi Code\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/FridgeHome.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/FridgeHome.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Ingredient.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Ingredient.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"Abi\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;2frogfrog&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/2frogfrog/2025Hackathon.git&quot;,\r\n    &quot;accountId&quot;: &quot;9e30be42-e8bb-474d-9661-65fa113fb45e&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2xEV0gnDSz4YVYlKMaSCK7gBlBC\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"master\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-0e3be3396995-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.23339.19\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9e4c6175-8279-4ff4-b4aa-c29abefc78ff\" name=\"Changes\" comment=\"\" />\r\n      <created>1747502999988</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1747502999988</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Made Ingredient\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747506288961</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747506288961</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Merged Abi Code\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1747507720782</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1747507720782</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Made Ingredient\" />\r\n    <MESSAGE value=\"Merged Abi Code\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Merged Abi Code\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 22df3c60e74206f42b571e731a5efafd4748296f)
++++ b/.idea/workspace.xml	(date 1747511740175)
+@@ -4,10 +4,11 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="Merged Abi Code">
++    <list default="true" id="9e4c6175-8279-4ff4-b4aa-c29abefc78ff" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/FridgeHome.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridgeHome.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/Ingredient.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ingredient.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/StartApp.py" beforeDir="false" afterPath="$PROJECT_DIR$/StartApp.py" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -22,25 +23,8 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
+-    <option name="RECENT_BRANCH_BY_REPOSITORY">
+-      <map>
+-        <entry key="$PROJECT_DIR$" value="Abi" />
+-      </map>
+-    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory">{
+-  &quot;lastFilter&quot;: {
+-    &quot;state&quot;: &quot;OPEN&quot;,
+-    &quot;assignee&quot;: &quot;2frogfrog&quot;
+-  }
+-}</component>
+-  <component name="GithubPullRequestsUISettings">{
+-  &quot;selectedUrlAndAccountId&quot;: {
+-    &quot;url&quot;: &quot;https://github.com/2frogfrog/2025Hackathon.git&quot;,
+-    &quot;accountId&quot;: &quot;9e30be42-e8bb-474d-9661-65fa113fb45e&quot;
+-  }
+-}</component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 0
+ }</component>
+@@ -52,8 +36,10 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "Python.FridgeHome.executor": "Run",
++    "Python.StartApp.executor": "Run",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "master"
++    "git-widget-placeholder": "Eva"
+   }
+ }]]></component>
+   <component name="SharedIndexes">
+@@ -72,39 +58,6 @@
+       <option name="presentableId" value="Default" />
+       <updated>1747502999988</updated>
+     </task>
+-    <task id="LOCAL-00001" summary="Made Ingredient">
+-      <option name="closed" value="true" />
+-      <created>1747506288961</created>
+-      <option name="number" value="00001" />
+-      <option name="presentableId" value="LOCAL-00001" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1747506288961</updated>
+-    </task>
+-    <task id="LOCAL-00002" summary="Merged Abi Code">
+-      <option name="closed" value="true" />
+-      <created>1747507720782</created>
+-      <option name="number" value="00002" />
+-      <option name="presentableId" value="LOCAL-00002" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1747507720782</updated>
+-    </task>
+-    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+-  <component name="Vcs.Log.Tabs.Properties">
+-    <option name="TAB_STATES">
+-      <map>
+-        <entry key="MAIN">
+-          <value>
+-            <State />
+-          </value>
+-        </entry>
+-      </map>
+-    </option>
+-  </component>
+-  <component name="VcsManagerConfiguration">
+-    <MESSAGE value="Made Ingredient" />
+-    <MESSAGE value="Merged Abi Code" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Merged Abi Code" />
+-  </component>
+ </project>
+\ No newline at end of file
